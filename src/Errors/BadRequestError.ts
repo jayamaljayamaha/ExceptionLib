@@ -22,11 +22,3 @@ class BadRequestError extends CustomError {
 }
 
 export default BadRequestError
-
-// {
-//     return this.errors.map(error => {
-//         return {
-//             error: error
-//         }
-//     })
-// }
