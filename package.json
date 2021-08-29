@@ -9,5 +9,9 @@
   },
   "keywords": [],
   "author": "@randomn",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^4.17.13",
+    "express": "^4.17.1"
+  }
 }
