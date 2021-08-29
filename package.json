@@ -1,0 +1,13 @@
+{
+  "name": "ExceptionLib",
+  "version": "1.0.0",
+  "description": "Middleware for handle exceptions",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rmdir /S \"./build\"",
+    "build": "npm run clean && tsc"
+  },
+  "keywords": [],
+  "author": "@randomn",
+  "license": "ISC"
+}
