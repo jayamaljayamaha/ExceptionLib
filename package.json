@@ -1,8 +1,12 @@
 {
-  "name": "ExceptionLib",
+  "name": "exception-library",
   "version": "1.0.0",
   "description": "Middleware for handle exceptions",
-  "main": "index.js",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "files": [
+    "lib/**/*"
+  ],
   "scripts": {
     "clean": "rmdir /S \"./build\"",
     "build": "tsc --build"
