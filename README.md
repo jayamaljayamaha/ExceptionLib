@@ -18,19 +18,16 @@ npm install exception-library
 
 Add ExceptionHandler middleware to your express application
 
-```nodejs
-import express from 'express'
-import { ExceptionHandler } from 'exception-library'
+```javascript
+import express from "express";
+import { ExceptionHandler } from "exception-library";
 
-const app = express()
+const app = express();
 
-[//]: # (After adding your route handlers)
+// After adding your route handlers
 
-app.use(ExceptionHandler)
-
+app.use(ExceptionHandler);
 ```
-
-[//]: # "After adding your route handlers"
 
 After this throw different types errors as your needs inside a route
 
@@ -40,7 +37,7 @@ After this throw different types errors as your needs inside a route
 
 ### Bad Gateway Exception
 
-```nodejs
+```javascript
 router.get('/path', (req, res) => {
     ...
 
@@ -52,7 +49,7 @@ router.get('/path', (req, res) => {
 
 ### Bad Request Exception
 
-```nodejs
+```javascript
 router.get('/path', (req, res) => {
     ...
 
@@ -64,7 +61,7 @@ router.get('/path', (req, res) => {
 
 ### Forbiddon Exception
 
-```nodejs
+```javascript
 router.get('/path', (req, res) => {
     ...
 
@@ -76,7 +73,7 @@ router.get('/path', (req, res) => {
 
 ### Internal Server Exception
 
-```nodejs
+```javascript
 router.get('/path', (req, res) => {
     ...
 
@@ -88,7 +85,7 @@ router.get('/path', (req, res) => {
 
 ### Method not allowed Exception
 
-```nodejs
+```javascript
 router.get('/path', (req, res) => {
     ...
 
@@ -100,7 +97,7 @@ router.get('/path', (req, res) => {
 
 ### Not found Exception
 
-```nodejs
+```javascript
 router.get('/path', (req, res) => {
     ...
 
@@ -112,7 +109,7 @@ router.get('/path', (req, res) => {
 
 ### Not Implemented Exception
 
-```nodejs
+```javascript
 router.get('/path', (req, res) => {
     ...
 
@@ -124,7 +121,7 @@ router.get('/path', (req, res) => {
 
 ### Request Time Out Exception
 
-```nodejs
+```javascript
 router.get('/path', (req, res) => {
     ...
 
@@ -136,7 +133,7 @@ router.get('/path', (req, res) => {
 
 ### Unauthorized Exception
 
-```nodejs
+```javascript
 router.get('/path', (req, res) => {
     ...
 
@@ -154,7 +151,7 @@ router.get('/path', (req, res) => {
 
 Exceptions returns from API like follwoing format
 
-```nodejs
+```javascript
 interface ReturnErrorType<Type> {
     statusCode: number
     errors: Type[]
