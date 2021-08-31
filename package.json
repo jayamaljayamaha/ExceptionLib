@@ -8,11 +8,15 @@
     "lib/**/*"
   ],
   "scripts": {
-    "clean": "rmdir /S \"./build\"",
+    "clean": "rmdir /S \"./lib\"",
     "build": "tsc --build"
   },
-  "keywords": [],
-  "author": "@randomn",
+  "keywords": [
+    "exceptionlibrary",
+    "exception",
+    "exceptionlib"
+  ],
+  "author": "Jayamal Jayamaha <jayamaljayamaha2@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "@types/express": "^4.17.13",
