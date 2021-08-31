@@ -23,7 +23,8 @@ import express from 'express'
 import { ExceptionHandler } from 'exception-library'
 
 const app = express()
-# After adding your route handlers
+
+[comment]: // After adding your route handlers
 
 app.use(ExceptionHandler)
 
