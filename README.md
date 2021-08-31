@@ -24,11 +24,13 @@ import { ExceptionHandler } from 'exception-library'
 
 const app = express()
 
-[comment]: // After adding your route handlers
+[//]: # (After adding your route handlers)
 
 app.use(ExceptionHandler)
 
 ```
+
+[//]: # "After adding your route handlers"
 
 After this throw different types errors as your needs inside a route
 
