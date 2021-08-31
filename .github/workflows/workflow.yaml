@@ -12,7 +12,7 @@ jobs:
     strategy:
       matrix:
         node-version:
-          - 12.x
+          - 14.x
     steps:
       - name: checkout
         uses: actions/checkout@v2
@@ -26,7 +26,9 @@ jobs:
       - name: build
         run: npm run build
       - name: publish
-        run: npm publish --access public
+        run: |
+          npm config set //registry.npmjs.org/:_authToken ${NODE_AUTH_TOKEN}
+          npm publish --access public
       - run: echo "This job's status is ${{ job.status }}."
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
