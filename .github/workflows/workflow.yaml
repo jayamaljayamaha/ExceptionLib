@@ -29,5 +29,6 @@ jobs:
       - name: publish
         run: npm publish --access public
       - run: echo "This job's status is ${{ job.status }}."
+      - run: echo "secret ${ NODE_AUTH_TOKEN }."
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
