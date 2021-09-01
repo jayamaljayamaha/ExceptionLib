@@ -23,12 +23,15 @@ jobs:
           registry-url: "https://registry.npmjs.org"
       - run: npm config set //registry.npmjs.org/:_authToken ${NODE_AUTH_TOKEN}
       - run: echo "secret ${{ secrets.NPM_ACCESS_TOKEN }}."
-      - name: install-dependencies
-        run: npm install
-      - name: build
-        run: npm run build
-      - name: publish
-        run: npm publish --access public
+      - run: npm install
+      - run: npm run build
+      - run: npm publish --access public
+      # - name: install-dependencies
+      #   run: npm install
+      # - name: build
+      #   run: npm run build
+      # - name: publish
+      #   run: npm publish --access public
       - run: echo "This job's status is ${{ job.status }}."
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
