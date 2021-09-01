@@ -29,5 +29,4 @@ jobs:
         # - name: publish
         #   run: npm publish --access public
         env:
-          PAT: ${{secrets.PAT}}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
