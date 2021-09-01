@@ -20,9 +20,12 @@ jobs:
       - run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_ACCESS_TOKEN }}" > ~/.npmrc
       - run: echo "secret ${{ secrets.NPM_ACCESS_TOKEN }}."
       - run: cat /home/runner/work/_temp/.npmrc
-      - run: npm install
-      - run: npm run build
-      - run: npm publish --verbose
+      - run: |
+          npm install
+          npm run build
+          npm publish --verbose
+      # - run: npm run build
+      # - run: npm publish --verbose
       # - name: install-dependencies
       #   run: npm install
       # - name: build
