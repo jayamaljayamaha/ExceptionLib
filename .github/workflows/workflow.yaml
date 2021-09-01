@@ -10,13 +10,16 @@ jobs:
     name: publish
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
         with:
           node-version: "12.x"
           registry-url: "https://registry.npmjs.org"
       - run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_ACCESS_TOKEN }}" > ~/.npmrc
       - run: echo "secret ${{ secrets.NPM_ACCESS_TOKEN }}."
+      - run: cat /home/runner/work/_temp/.npmrc
       - run: npm install
       - run: npm run build
       - run: npm publish --verbose
