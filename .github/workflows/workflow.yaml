@@ -22,7 +22,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           registry-url: "https://registry.npmjs.org"
       - run: npm config set //registry.npmjs.org/:_authToken ${NODE_AUTH_TOKEN}
-      - run: echo "secret ${ NODE_AUTH_TOKEN }."
+      - run: echo "secret ${{ secrets.NPM_ACCESS_TOKEN }}."
       - name: install-dependencies
         run: npm install
       - name: build
