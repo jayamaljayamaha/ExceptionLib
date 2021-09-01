@@ -19,19 +19,15 @@ jobs:
           registry-url: "https://registry.npmjs.org"
       - run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_ACCESS_TOKEN }}" > ~/.npmrc
       - run: echo "secret ${{ secrets.NPM_ACCESS_TOKEN }}."
-      - run: cat /home/runner/work/_temp/.npmrc
-      - run: |
-          npm install
-          npm run build
-          npm publish --verbose
-      # - run: npm run build
-      # - run: npm publish --verbose
-      # - name: install-dependencies
-      #   run: npm install
-      # - name: build
-      #   run: npm run build
-      # - name: publish
-      #   run: npm publish --access public
-      - run: echo "This job's status is ${{ job.status }}."
+      - run: npm install
+      - run: npm run build
+      - run: npm publish --verbose
+        # - name: install-dependencies
+        #   run: npm install
+        # - name: build
+        #   run: npm run build
+        # - name: publish
+        #   run: npm publish --access public
         env:
+          PAT: ${{secrets.PAT}}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
