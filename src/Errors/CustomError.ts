@@ -1,18 +1,18 @@
-import ReturnErrorType from "../Types/ReturnErrorType"
+import { ReturnErrorType } from "../Types/ErrorTypes";
 
 abstract class CustomError extends Error {
-    abstract statusCode: number
+  abstract statusCode: number;
 
-    constructor(message: string) {
-        super(message)
-        Object.setPrototypeOf(this, CustomError.prototype)
-    }
+  constructor(message: string) {
+    super(message);
+    Object.setPrototypeOf(this, CustomError.prototype);
+  }
 
-    getStatus(): number {
-        return this.statusCode
-    }
+  getStatus(): number {
+    return this.statusCode;
+  }
 
-    abstract getErrors(): any
+  abstract getErrors(): any;
 }
 
-export default CustomError
+export default CustomError;
