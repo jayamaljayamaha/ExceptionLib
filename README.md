@@ -143,6 +143,24 @@ router.get('/path', (req, res) => {
 })
 ```
 
+### Data Validation Exception with Joi
+
+```javascript
+router.get('/path', (req, res) => {
+    ...
+    // Only support with Joi validation
+    const errors = [{
+        message: detail.message,
+        field: detail.context.label,
+        errorType: detail.type
+    }]
+
+    throw new DataValidationError(errors)
+
+    ...
+})
+```
+
 ## Data Types
 
 ---
@@ -156,5 +174,17 @@ interface ReturnErrorType<Type> {
     statusCode: number
     errors: Type[]
     type: string
+}
+```
+
+### Validation Error Type
+
+Data should be in this type to pass to the DataValidationError
+
+```javascript
+interface ValidationErrorType {
+  message: string;
+  field: string | undefined;
+  errorType: string;
 }
 ```

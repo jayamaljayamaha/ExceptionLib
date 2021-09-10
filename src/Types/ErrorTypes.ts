@@ -6,6 +6,6 @@ export interface ReturnErrorType<Type> {
 
 export interface ValidationErrorType {
   message: string;
-  field: string;
+  field: string | undefined;
   errorType: string;
 }
