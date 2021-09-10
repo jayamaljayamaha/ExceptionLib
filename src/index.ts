@@ -8,6 +8,7 @@ import NotFoundError from "./Errors/NotFoundError";
 import NotImplementedError from "./Errors/NotImplementedError";
 import RequestTimeOutError from "./Errors/RequestTimeOutError";
 import UnorthorizedError from "./Errors/UnorthorizedError";
+import DataValidationError from "./Errors/DataValidationError";
 
 import ExceptionHandler from "./Middlewares/ExceptionHandler";
 
@@ -24,6 +25,7 @@ export {
   NotImplementedError,
   RequestTimeOutError,
   UnorthorizedError,
+  DataValidationError,
   ExceptionHandler,
   ReturnErrorType,
   ValidationErrorType,
