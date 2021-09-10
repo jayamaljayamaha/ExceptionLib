@@ -1,24 +1,24 @@
-import ReturnErrorType from "../Types/ReturnErrorType";
+import { ReturnErrorType } from "../Types/ErrorTypes";
 import CustomError from "./CustomError";
 
-class ForbiddenError extends CustomError{
-    statusCode: number = 403;
+class ForbiddenError extends CustomError {
+  statusCode: number = 403;
 
-    private error: string;
+  private error: string;
 
-    constructor(error: string){
-        super("Forbidden Error")
-        this.error = error
-        Object.setPrototypeOf(this, ForbiddenError.prototype)
-    }
+  constructor(error: string) {
+    super("Forbidden Error");
+    this.error = error;
+    Object.setPrototypeOf(this, ForbiddenError.prototype);
+  }
 
-    getErrors() : ReturnErrorType<string> {
-        return {
-            statusCode: this.statusCode,
-            errors: [this.error],
-            type: "Forbidden Error"
-        }
-    }
+  getErrors(): ReturnErrorType<string> {
+    return {
+      statusCode: this.statusCode,
+      errors: [this.error],
+      type: "Forbidden Error",
+    };
+  }
 }
 
-export default ForbiddenError
+export default ForbiddenError;
