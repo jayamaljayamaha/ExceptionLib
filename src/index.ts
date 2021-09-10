@@ -11,19 +11,20 @@ import UnorthorizedError from "./Errors/UnorthorizedError";
 
 import ExceptionHandler from "./Middlewares/ExceptionHandler";
 
-import ReturnErrorType from "./Types/ReturnErrorType";
+import { ReturnErrorType, ValidationErrorType } from "./Types/ErrorTypes";
 
 export {
-    CustomError,
-    BadGatewayError,
-    BadRequestError,
-    ForbiddenError,
-    InternalServerError,
-    MethodNotAllowedError,
-    NotFoundError,
-    NotImplementedError,
-    RequestTimeOutError,
-    UnorthorizedError,
-    ExceptionHandler,
-    ReturnErrorType
-}
+  CustomError,
+  BadGatewayError,
+  BadRequestError,
+  ForbiddenError,
+  InternalServerError,
+  MethodNotAllowedError,
+  NotFoundError,
+  NotImplementedError,
+  RequestTimeOutError,
+  UnorthorizedError,
+  ExceptionHandler,
+  ReturnErrorType,
+  ValidationErrorType,
+};

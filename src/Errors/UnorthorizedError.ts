@@ -1,24 +1,23 @@
-import ReturnErrorType from "../Types/ReturnErrorType";
+import { ReturnErrorType } from "../Types/ErrorTypes";
 import CustomError from "./CustomError";
 
 class UnorthorizedError extends CustomError {
-    statusCode: number = 401;
-    private error: string;
+  statusCode: number = 401;
+  private error: string;
 
-    constructor(error: string){
-        super("Unorthorized Error")
-        this.error = error
-        Object.setPrototypeOf(this, UnorthorizedError.prototype)
-    }
+  constructor(error: string) {
+    super("Unorthorized Error");
+    this.error = error;
+    Object.setPrototypeOf(this, UnorthorizedError.prototype);
+  }
 
-    getErrors() : ReturnErrorType<string> {
-        return {
-            statusCode: this.statusCode,
-            errors: [this.error],
-            type: "Unorthorized Error"
-        }
-    }
-
+  getErrors(): ReturnErrorType<string> {
+    return {
+      statusCode: this.statusCode,
+      errors: [this.error],
+      type: "Unorthorized Error",
+    };
+  }
 }
 
-export default UnorthorizedError
+export default UnorthorizedError;
